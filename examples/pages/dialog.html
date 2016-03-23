@@ -1,9 +1,95 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-</head>
-<body>
 
+<head>
+    <meta charset="utf-8">
+    <title>Hello MUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link rel="stylesheet" href="../css/dialog.css"/>
+    <style>
+        .mui-content-padded{
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>
+    <h1 class="mui-title">块级按钮</h1>
+</header>
+<div class="mui-content">
+
+    <div class="mui-content-padded">
+        <br><h3>弹出层样式切换：</h3><br>
+        <div id="themeArea">
+            <button type="button" theme="white" class="mui-btn mui-btn-block">默认风格</button>
+            <button type="button" theme="black" class="mui-btn mui-btn-primary mui-btn-block mui-btn-outlined">黑色风格</button>
+            <button type="button" theme="cyan" class="mui-btn mui-btn-success mui-btn-block mui-btn-outlined">青色风格</button>
+            <button type="button" theme="purple" class="mui-btn mui-btn-royal mui-btn-block">紫色风格</button>
+        </div>
+        <br><h3>弹出层动画切换：</h3><br>
+        <div id="animeArea">
+            <button type="button" anime="showDialog_down .2s ease-out" class="mui-btn mui-btn-block">默认动画</button>
+            <button type="button" anime="showDialog_skew .2s ease-out" class="mui-btn mui-btn-primary mui-btn-block">skew动画</button>
+            <button type="button" anime="showDialog_scale .2s ease-out" class="mui-btn mui-btn-success mui-btn-block">scale动画</button>
+        </div>
+        <br><h3>弹出层confirm：</h3><br>
+        <div id="confirmArea">
+            <button type="button" class="mui-btn mui-btn-block">confirm弹出层</button>
+        </div>
+        <br><h3>图标title：</h3><br>
+        <div id="iconArea">
+            <button type="button" class="mui-btn mui-btn-block">这个后面再补</button>
+        </div>
+    </div>
+</div>
 </body>
+<script src="../js/mui.min.js"></script>
+<script src="../js/dialog.js"></script>
+<script>
+
+    !function($){
+        $.init({
+            swipeBack:true //启用右滑关闭功能
+        });
+        var mobile = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+        var clickName = mobile?"tap":"click";
+        $("#themeArea").on(clickName,"button",function(){
+            var theme = this.getAttribute("theme");
+            $.diaLog("alert","","<p style='text-align: center'>欢迎您的到来！</p>", {theme:theme});
+        });
+        $("#animeArea").on(clickName,"button",function(){
+            var anime = this.getAttribute("anime");
+            $.diaLog("alert","","<p style='text-align: center'>欢迎您的到来！</p>", {animate_show:anime});
+        });
+        $("#confirmArea").on(clickName,"button",function(){
+            var option = {
+                btn_yes:"好的",
+                btn_no:"滚蛋",
+                click_yes:function(){
+                    //ps:由于弹出过于轻量，目前仅支持并存一个弹出层，所以在展示下一弹出层时需要等上个弹出层的动画结束（300毫秒）
+                    setTimeout(function(){
+                        $.diaLog("alert","ok","<p style='text-align: center'>好的，给你鱼丸！</p>", {});
+                    },300);
+                },
+                click_no:function(){
+                    setTimeout(function(){
+                        $.diaLog("alert","","<p style='text-align: center'>滚蛋吧作者！</p>", {});
+                    },300);
+                }
+            }
+            $.diaLog("confirm","求赏","<p style='text-align: center'>喜欢就来一波鱼丸吧！</p>", option);
+        });
+    }(mui);
+
+
+
+
+</script>
 </html>

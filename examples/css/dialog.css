@@ -1,0 +1,64 @@
+.ajaxmsg{box-shadow: 1px 2px 5px 0px gray;;position: fixed;z-index:999;top:100%;margin-top:-30px;opacity: 0;font-size:12px;min-width: 150px;background: rgba(0,0,0,0.75);border-radius: 5px;height: 25px;color: #fff;padding: 0 10px;line-height: 25px;text-align: center;}
+@-webkit-keyframes loading{
+    0%{opacity:0;margin-top: -30px;}
+    5%{opacity:.9;margin-top: -55px;}
+    10%{opacity:1;margin-top: -50px;}
+    80%{opacity:1;margin-top: -50px;}
+    100%{opacity:0;margin-top: -30px;}
+}
+/*按钮弹性*/
+@-webkit-keyframes gelatine {
+    from, to {-webkit-transform: scale(1, 1);}
+    25% {-webkit-transform: scale(0.9, 1.1);}
+    50% {-webkit-transform: scale(1.1, 0.9);}
+    75% {-webkit-transform: scale(0.95, 1.05);}
+    100% {-webkit-transform: scale(1, 1);}
+}
+.gelatine{-webkit-animation: gelatine 0.5s;}
+
+/*弹出层*/
+.d_bg{position: fixed;width: 100%;height: 100%;top: 0;background-color: #000000;opacity: .5;z-index: 998}
+.d_window{width: 75%;max-width: 300px;min-width: 200px;position: fixed;z-index: 999;top:50%;margin-top: -100px;border-radius: 4px;opacity: 1;}
+.d_title{/*border-bottom: 2px solid #00d6ff;*/color: #00d6ff;padding: 10px;padding-bottom: 0;font-weight: bold;font-size: 21px;text-align: center}
+.d_title img{width: 30px;height: 30px;}
+.d_type_confirm img{}
+.d_content{min-height: 50px;max-height: 200px;overflow: auto;padding: 8px;}
+.d_content p{word-break: break-all;color: #ffffff;font-size: 16px}
+.d_foot{  background-color: #F4F4F4;;height: 43px;border-top: 1px solid #E2E2E2;text-align: center;overflow: hidden;border-bottom-left-radius: 4px;border-bottom-right-radius: 4px}
+.d_foot span{display: block;float: left;width: 50%;height: 43px;line-height: 43px;text-align: center;color:#4299E0;cursor: pointer;font-family: "黑体";}
+.span_last{border-left: 1px solid #E2E2E2;}
+.d_foot .span_all{width: 100%}
+.d_foot span:active{color:#fff;background-color:#929292}
+.d_theme_blue{  box-shadow: 2px 3px 10px 0 #0A0069;background: -webkit-gradient(linear,0 0,0 100%,from(#15267E),to(#8497F5));}
+.d_theme_green{box-shadow: 2px 3px 10px 0 #004C19;background: -webkit-gradient(linear,0 0,0 100%,from(#10622D),to(#38C394));}
+.d_theme_black{box-shadow: 2px 3px 10px 0 #444444;background: -webkit-gradient(linear,0 0,0 100%,from(#000000),to(#979898));}
+.d_theme_cyan{box-shadow: 2px 3px 10px 0 #003F44;background: -webkit-gradient(linear,0 0,0 100%,from(#006266),to(#00ACCB));}
+.d_theme_purple{  box-shadow: 2px 3px 10px 0 #3D0051;background: -webkit-gradient(linear,0 0,0 100%,from(#2C003A),to(#9400C5));}
+.d_theme_white{  box-shadow: 2px 3px 10px 0 #444444;background: -webkit-gradient(linear,0 0,0 100%,from(#FFFFFF),to(#FFFFFF));}
+.d_theme_white .d_content p{color:#727272;font-family: "黑体";}
+
+@-webkit-keyframes showDialog_down{
+    0%{opacity: 0;-webkit-transform:translateY(-100px);}
+    100%{opacity: 1;-webkit-transform:translateY(0px);}
+}
+@-webkit-keyframes showDialog_skew{
+    0%{opacity: 0;-webkit-transform:skew(90deg,0);}
+    100%{opacity: 1;-webkit-transform:skew(0,0);}
+}
+@-webkit-keyframes showDialog_scale{
+    0%{-webkit-transform:scale(.1,.1);}
+    80%{-webkit-transform:scale(1.2,1.2);}
+    100%{-webkit-transform:scale(1,1);}
+}
+@-webkit-keyframes hideDialog{
+    0%{opacity:1;-webkit-transform:translateY(0px);}
+    100%{opacity:0;-webkit-transform:translateY(-100px);}
+}
+@-webkit-keyframes fadeIn{
+    0%{opacity:0;}
+    100%{opacity:1;}
+}
+@-webkit-keyframes fadeOut{
+    0%{opacity:1;}
+    100%{opacity:0;}
+}
