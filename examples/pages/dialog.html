@@ -15,6 +15,10 @@
         .mui-content-padded{
             margin: 10px;
         }
+        .mui-icon-dialog-error:before{content:'\e597';font-size: 33px;color: orangered;}
+        .mui-icon-dialog-success:before{content:'\e598';font-size: 33px;color: rgb(0, 226, 0);}
+        .mui-icon-dialog-info:before{content:'\e599';font-size: 33px;color: rgb(0, 168, 255);}
+        .mui-icon-dialog-confirm:before{content:'\e600';font-size: 33px;color: rgb(0, 168, 255);}
     </style>
 </head>
 
@@ -45,7 +49,10 @@
         </div>
         <br><h3>图标title：</h3><br>
         <div id="iconArea">
-            <button type="button" class="mui-btn mui-btn-block">这个后面再补</button>
+            <button type="button" icon='<span class="mui-icon mui-icon-dialog-error"></span>' class="mui-btn mui-btn-block">警告</button>
+            <button type="button" icon='<span class="mui-icon mui-icon-dialog-success"></span>' class="mui-btn mui-btn-block">成功</button>
+            <button type="button" icon='<span class="mui-icon mui-icon-dialog-info"></span>' class="mui-btn mui-btn-block">信息</button>
+            <button type="button" icon='<span class="mui-icon mui-icon-dialog-confirm"></span>' class="mui-btn mui-btn-block">询问</button>
         </div>
     </div>
 </div>
@@ -53,7 +60,6 @@
 <script src="../js/mui.min.js"></script>
 <script src="../js/dialog.js"></script>
 <script>
-
     !function($){
         $.init({
             swipeBack:true //启用右滑关闭功能
@@ -86,6 +92,11 @@
             }
             $.diaLog("confirm","求赏","<p style='text-align: center'>喜欢就来一波鱼丸吧！</p>", option);
         });
+        $("#iconArea").on(clickName,"button",function(){
+            var title = this.getAttribute("icon");
+            $.diaLog("alert",title,"<p style='text-align: center'>欢迎您的到来！</p>", {});
+        });
+
     }(mui);
 
 

@@ -1,0 +1,23 @@
+{
+  "name": "dialog",
+  "version": "1.0.0",
+  "description": "test gulp",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jx2011/muiDialog.git"
+  },
+  "author": "jx2011",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jx2011/muiDialog/issues"
+  },
+  "homepage": "https://github.com/jx2011/muiDialog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.0.5"
+  }
+}
